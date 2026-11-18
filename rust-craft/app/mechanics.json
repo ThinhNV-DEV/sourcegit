@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "values": [
+    { "name": "max history commits", "group": "history", "value": 20000, "source": "src/ViewModels/Preferences.cs:821" },
+    { "name": "history row height", "group": "layout", "value": 26, "unit": "px", "source": "src/Views/Histories.axaml:35" },
+    { "name": "history header height", "group": "layout", "value": 24, "unit": "px", "source": "src/Views/Histories.axaml:34" },
+    { "name": "left icon bar width", "group": "layout", "value": 49, "unit": "px", "source": "src/Views/Repository.axaml:15" },
+    { "name": "working copy left width", "group": "layout", "value": 300, "unit": "px", "source": "src/ViewModels/LayoutInfo.cs:80" },
+    { "name": "commit detail changes left width", "group": "layout", "value": 256, "unit": "px", "source": "src/ViewModels/LayoutInfo.cs:82" },
+    { "name": "sidebar width", "group": "layout", "value": 260, "unit": "px", "estimated": true },
+    { "name": "graph unit width", "group": "graph", "value": 12, "unit": "px", "source": "src/Models/CommitGraph.cs:74" },
+    { "name": "graph half width", "group": "graph", "value": 6, "unit": "px", "source": "src/Models/CommitGraph.cs:75" },
+    { "name": "graph start offset", "group": "graph", "value": 4, "unit": "px", "source": "src/Models/CommitGraph.cs:89" },
+    { "name": "graph pen colors", "group": "graph", "value": 10, "source": "src/Models/CommitGraph.cs:423-434" },
+    { "name": "graph pen thickness", "group": "graph", "value": 2, "unit": "px", "source": "src/Models/CommitGraph.cs:24" },
+    { "name": "diff min context lines", "group": "diff", "value": 4, "source": "src/ViewModels/DiffContext.cs:84" },
+    { "name": "subject guide length", "group": "commit", "value": 50, "unit": "chars", "source": "src/ViewModels/Preferences.cs:822" },
+    { "name": "commit search limit", "group": "search", "value": 1000, "source": "src/Commands/QueryCommits.cs:23" },
+    { "name": "short sha length", "group": "history", "value": 10, "unit": "chars", "source": "reference/theme_dark.png (SHA column)" },
+    { "name": "theme dark contents", "group": "theme", "value": "#1C1C1C", "source": "src/Resources/Themes.axaml:45" },
+    { "name": "theme light contents", "group": "theme", "value": "#FFFFFF", "source": "src/Resources/Themes.axaml:11" }
+  ]
+}

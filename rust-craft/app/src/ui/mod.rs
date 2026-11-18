@@ -1,0 +1,9 @@
+pub mod app;
+pub mod diff_view;
+pub mod histories;
+pub mod popups;
+pub mod repo_view;
+pub mod sidebar;
+pub mod stashes;
+pub mod widgets;
+pub mod working_copy;

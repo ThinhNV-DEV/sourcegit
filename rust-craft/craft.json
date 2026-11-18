@@ -1,0 +1,23 @@
+{
+  "request": "Dùng skill craft anything tạo một phiên bản đầy đủ tính năng bằng Rust (scope: Core đầy đủ)",
+  "target": {
+    "kind": "local",
+    "path": "../src"
+  },
+  "kind": "app",
+  "mode": "deep",
+  "stack": "Rust + egui/eframe (glow), git CLI",
+  "status": "ready",
+  "rounds": [
+    {
+      "round": 1,
+      "passed": false,
+      "note": "self-test 15/19 (fixture bugs), icon glyphs missing"
+    },
+    {
+      "round": 2,
+      "passed": true,
+      "note": "build clean, self-test 19/19, mechanics PASS, screenshots match layout"
+    }
+  ]
+}

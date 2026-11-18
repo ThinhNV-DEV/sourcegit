@@ -1,0 +1,100 @@
+{
+  "steps": [
+    {
+      "detail": "init ok=true, commit ok=true, commits loaded=1",
+      "passed": true,
+      "step": "init_commit"
+    },
+    {
+      "detail": "merge ok=true, commits=4, merge commits=1, head dots=1, lanes=2, paths=2, links=0",
+      "passed": true,
+      "step": "history_graph"
+    },
+    {
+      "detail": "current=main, local branches=2, head decorators=[\"main\"]",
+      "passed": true,
+      "step": "branches"
+    },
+    {
+      "detail": "unstaged=2, untracked=1",
+      "passed": true,
+      "step": "status"
+    },
+    {
+      "detail": "staged after add=1, after unstage=0, changes after discard=0",
+      "passed": true,
+      "step": "stage_unstage_discard"
+    },
+    {
+      "detail": "hunks before=2, apply ok=true, staged hunks=1, unstaged hunks=1",
+      "passed": true,
+      "step": "stage_hunk"
+    },
+    {
+      "detail": "unstage selected '+' lines ok=true, staged now +0/-1",
+      "passed": true,
+      "step": "stage_lines"
+    },
+    {
+      "detail": "amend ok=true, message first line='chore: c (amended)'",
+      "passed": true,
+      "step": "commit_amend"
+    },
+    {
+      "detail": "push ok=true, stashes=1, stash files=2, clean after push=true, pop ok=true, changes restored=2",
+      "passed": true,
+      "step": "stash"
+    },
+    {
+      "detail": "tags created=2, annotated parsed=true, renamed=true, deleted ok=true, tags left=1, branches left=1",
+      "passed": true,
+      "step": "tags_branches"
+    },
+    {
+      "detail": "add ok=true, push ok=true, clone ok=true, fetch ok=true, behind after fetch=1, remote branches=1, pull ok=true, behind after pull=0",
+      "passed": true,
+      "step": "remote_push_fetch_pull"
+    },
+    {
+      "detail": "cherry-pick ok=true (file present=true), revert ok=true (file removed=true), reset --hard HEAD~2: 8→6 commits",
+      "passed": true,
+      "step": "cherry_pick_revert_reset"
+    },
+    {
+      "detail": "merge failed as expected=true, in-progress=merge:true, conflicts=1→0, continue ok=true, result='# conflict side'",
+      "passed": true,
+      "step": "conflict_resolve"
+    },
+    {
+      "detail": "rebase stopped=true, detected rebase=true, abort ok=true",
+      "passed": true,
+      "step": "rebase_abort"
+    },
+    {
+      "detail": "blame lines=40, README history=3, search 'remote change'=1, by author=11, compare HEAD~3..HEAD files=2",
+      "passed": true,
+      "step": "blame_history_search_compare"
+    },
+    {
+      "detail": "worktree add ok=true, listed=1 (wt-branch), remove ok=true, submodule add ok=true (done.), submodules=1",
+      "passed": true,
+      "step": "worktree_submodule"
+    },
+    {
+      "detail": "current-branch commits=10, all-branch commits=12, merge dots below HEAD=2",
+      "passed": true,
+      "step": "history_scope"
+    },
+    {
+      "detail": "frames=9, shapes=1425, commit detail loaded=true, history rows=12",
+      "passed": true,
+      "step": "ui_render"
+    },
+    {
+      "detail": "entries=75, has commit=true, has status query=false",
+      "passed": true,
+      "step": "command_log"
+    }
+  ],
+  "version": 1
+}
