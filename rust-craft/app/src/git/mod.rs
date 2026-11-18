@@ -79,6 +79,7 @@ pub fn exec_with_input(repo: &Path, args: &[&str], stdin: &[u8]) -> Output {
 fn spawn(repo: Option<&Path>, args: &[&str], stdin: Option<&[u8]>, record: bool) -> Output {
     let start = Instant::now();
     let mut cmd = Command::new("git");
+    no_window(&mut cmd);
     cmd.arg("--no-pager").args(["-c", "core.quotepath=off", "-c", "color.ui=false"]);
     cmd.args(args);
     if let Some(r) = repo {
@@ -141,6 +142,17 @@ fn shell_quote(s: &str) -> String {
     } else {
         s.to_string()
     }
+}
+
+/// On Windows, keep git from flashing a console window for every command.
+pub fn no_window(cmd: &mut Command) -> &mut Command {
+    #[cfg(windows)]
+    {
+        use std::os::windows::process::CommandExt;
+        const CREATE_NO_WINDOW: u32 = 0x0800_0000;
+        cmd.creation_flags(CREATE_NO_WINDOW);
+    }
+    cmd
 }
 
 pub fn version() -> Option<String> {

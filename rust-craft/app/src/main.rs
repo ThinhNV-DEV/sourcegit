@@ -5,6 +5,9 @@
 //!   sourcegit-rs --screenshot out.png [--page histories|changes|stashes] [--theme dark|light] [REPO_PATH]
 //!   sourcegit-rs --self-test out.json
 
+// Release builds on Windows are GUI apps (no console window).
+#![cfg_attr(all(windows, not(debug_assertions)), windows_subsystem = "windows")]
+
 mod consts;
 mod git;
 mod graph;

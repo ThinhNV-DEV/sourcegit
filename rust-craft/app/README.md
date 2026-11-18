@@ -11,6 +11,21 @@ cargo build --release
 
 On Linux the window needs X11 or Wayland libs at runtime (`libxkbcommon-x11-0`, `libgl1`).
 
+### Windows portable
+
+Needs Rust (rustup) with the MSVC toolchain (Visual Studio Build Tools, "Desktop development with C++"). Run in `cmd`:
+
+```bat
+build-windows-portable.bat            :: x64
+build-windows-portable.bat arm64      :: ARM64
+build-windows-portable.bat --test     :: run the self-test before packaging
+```
+
+Output goes to `dist\SourceGit-rs-<version>-win-<arch>-portable\` (plus a `.zip`):
+`SourceGit-rs.exe`, `README.md`, `LICENSE.txt`, and an empty `data\` folder.
+If a `data\` folder sits next to the exe, all settings are written there (portable mode); otherwise they go to `%APPDATA%\SourceGit-rs`.
+The exe links the C runtime statically (no VC++ Redistributable needed), has no console window, and does not open a cmd window when it calls git. Machines running it need Git for Windows on PATH.
+
 Test modes (craft-anything contract):
 
 ```bash

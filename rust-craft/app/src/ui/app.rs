@@ -494,7 +494,8 @@ impl App {
                 ui.end_row();
             });
             ui.separator();
-            ui.label(RichText::new(format!("Settings file: {}", crate::prefs::config_dir().join("preference.json").display())).size(11.0));
+            let mode = if crate::prefs::is_portable() { "portable" } else { "installed" };
+            ui.label(RichText::new(format!("Settings file ({mode}): {}", crate::prefs::config_dir().join("preference.json").display())).size(11.0));
         });
         if self.show_prefs && !open {
             self.prefs.save();

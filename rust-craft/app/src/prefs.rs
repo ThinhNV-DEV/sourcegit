@@ -71,7 +71,18 @@ pub fn config_dir() -> PathBuf {
     if let Ok(p) = std::env::var("SOURCEGIT_RS_CONFIG") {
         return PathBuf::from(p);
     }
+    // Portable mode: a `data` folder next to the executable holds all settings.
+    if let Some(dir) = std::env::current_exe().ok().and_then(|e| e.parent().map(|p| p.join("data"))) {
+        if dir.is_dir() {
+            return dir;
+        }
+    }
     dirs::config_dir().unwrap_or_else(std::env::temp_dir).join("SourceGit-rs")
+}
+
+pub fn is_portable() -> bool {
+    std::env::var("SOURCEGIT_RS_CONFIG").is_err()
+        && std::env::current_exe().ok().and_then(|e| e.parent().map(|p| p.join("data").is_dir())).unwrap_or(false)
 }
 
 impl Preferences {

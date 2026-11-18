@@ -567,6 +567,7 @@ pub fn query_revision_files(repo: &Path, rev: &str) -> Vec<RevisionFile> {
 pub fn query_file_content(repo: &Path, rev: &str, path: &str) -> Result<Vec<u8>, String> {
     let spec = format!("{rev}:{path}");
     let mut cmd = std::process::Command::new("git");
+    super::no_window(&mut cmd);
     cmd.current_dir(repo).args(["--no-pager", "show", &spec]);
     match cmd.output() {
         Ok(o) if o.status.success() => Ok(o.stdout),
