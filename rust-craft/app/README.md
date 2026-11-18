@@ -19,7 +19,10 @@ Needs Rust (rustup) with the MSVC toolchain (Visual Studio Build Tools, "Desktop
 build-windows-portable.bat            :: x64
 build-windows-portable.bat arm64      :: ARM64
 build-windows-portable.bat --test     :: run the self-test before packaging
+build-windows-portable.bat --clean    :: cargo clean first
 ```
+
+The script always builds with the `stable-x86_64-pc-windows-msvc` toolchain (installing it if missing), even when the default rustup toolchain is `windows-gnu`. A GNU host toolchain with llvm-mingw cannot link the dependencies' build scripts (`undefined symbol: _Unwind_Resume`). If the MSVC Build Tools are missing, the script stops and prints the `winget` command to install them.
 
 Output goes to `dist\SourceGit-rs-<version>-win-<arch>-portable\` (plus a `.zip`):
 `SourceGit-rs.exe`, `README.md`, `LICENSE.txt`, and an empty `data\` folder.
